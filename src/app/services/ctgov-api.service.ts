@@ -33,15 +33,14 @@ export class CtgovApiService {
 
     let params = new HttpParams()
     .set('expr', queryExpression)
+    .set('fmt', "json")
     .set('fields', 'NCTId,Condition,BriefTitle,OverallStatus,PrimaryCompletionDate')
 
-    this.http.get<CTGovResponse>(baseUrl, {params})
-    .subscribe(trials => {
+    this.http.get<CTGovResponse>(baseUrl, {params}).subscribe(trials => {
       this.numTrials.next(trials.StudyFieldsResponse.NStudiesReturned);
       this.trials.next(trials.StudyFieldsResponse.StudyFields);
-      console.log(trials.StudyFieldsResponse.NStudiesReturned + ' trials were loaded!');
     }, error => {
-      console.error(error.error);
+      console.error(error);
     });
   }
 
