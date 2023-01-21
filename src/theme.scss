@@ -1,0 +1,23 @@
+@import '../node_modules/@angular/material/theming';
+
+@include mat-core();
+
+$costello-theme-primary: mat-palette($mat-teal, 800);
+$costello-theme-accent: mat-palette($mat-orange, A200, A100, A400);
+$costello-theme-warn: mat-palette($mat-red);
+
+$costello-theme: mat-light-theme($costello-theme-primary, $costello-theme-accent, $costello-theme-warn);
+
+$costello-theme: mat-light-theme((
+ color: (
+   primary: $costello-theme-primary,
+   accent: $costello-theme-accent,
+   warn: $costello-theme-warn
+ ),
+ density: 0,
+));
+
+
+@include angular-material-theme($costello-theme);
+
+
