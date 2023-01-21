@@ -42,4 +42,10 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
 </div>
-  
+<mat-paginator
+    #paginator
+    [length]="length"
+    [pageIndex]="pageIndex"
+    [pageSize]="pageSize"
+    (page)="getTrialData()"
+></mat-paginator>
