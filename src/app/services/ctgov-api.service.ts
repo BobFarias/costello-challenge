@@ -27,6 +27,9 @@ export class CtgovApiService {
     // API Documentation: https://www.clinicaltrials.gov/api/gui/ref/api_urls
     const baseUrl = 'https://ClinicalTrials.gov/api/query/study_fields';
 
+    const minimumRank = 1;
+    const maximumRank = 500;
+
     const queryExpression = this.generateAPIQueryString(
       status, condition, primaryCompletionDateFrom, primaryCompletionDateUntil
     );
@@ -34,6 +37,8 @@ export class CtgovApiService {
     let params = new HttpParams()
     .set('expr', queryExpression)
     .set('fmt', "json")
+    .set('min_rnk', minimumRank)
+    .set('max_rnk', maximumRank)
     .set('fields', 'NCTId,Condition,BriefTitle,OverallStatus,PrimaryCompletionDate')
 
     this.http.get<CTGovResponse>(baseUrl, {params}).subscribe(trials => {
