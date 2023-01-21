@@ -8,8 +8,12 @@ import { HomeComponent } from './components/home/home.component';
 import { FiltersComponent } from './components/home/filters/filters.component';
 import { TableComponent } from './components/home/table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatInputModule,
+    FormsModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
