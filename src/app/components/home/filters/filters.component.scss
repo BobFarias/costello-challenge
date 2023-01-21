@@ -1,0 +1,32 @@
+.container-filters{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.conatiner-table {
+    margin: 10px 0px;
+}
+  
+    tr {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    td {
+        padding-right: 8px;
+    }
+
+.container-search-button {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+    p {
+        margin: 10px 0px;
+    }
+    

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CtgovApiService } from 'src/app/services/ctgov-api.service';
+import {FormGroup, FormControl} from '@angular/forms';
+
 
 @Component({
   selector: 'app-filters',
@@ -7,6 +9,11 @@ import { CtgovApiService } from 'src/app/services/ctgov-api.service';
   styleUrls: ['./filters.component.scss']
 })
 export class FiltersComponent implements OnInit {
+  dateRange = new FormGroup({
+    start: new FormControl<Date | null>(null),
+    end: new FormControl<Date | null>(null),
+  });
+
   numTrials = 0;
 
   constructor(

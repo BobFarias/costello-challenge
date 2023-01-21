@@ -1,2 +1,50 @@
-<button (click)="getTrialData()">Get Trials</button>
-<p>Found {{numTrials}} trials!</p>
+<div class="container-filters">
+    <form class="example-form">
+        <table class="conatiner-table" cellspacing="0">
+            <tr>
+                 <!-- CONDITION CONTAINER -->
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Condition</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+
+                <!-- STATUS CONTAINER -->
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Status</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+
+
+                <!-- DATEPICKER CONTAINER -->
+                <td>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter a date range</mat-label>
+                        <mat-date-range-input [formGroup]="dateRange" [rangePicker]="picker">
+                          <input matStartDate formControlName="start" placeholder="Start date">
+                          <input matEndDate formControlName="end" placeholder="End date">
+                        </mat-date-range-input>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #picker></mat-date-range-picker>
+                      
+                        <mat-error *ngIf="dateRange.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+                        <mat-error *ngIf="dateRange.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+                      </mat-form-field>
+                </td>
+
+                 <!-- SEARCH BUTTON CONTAINER -->
+                <td class="container-search-button">
+                    <button color="primary" mat-flat-button (click)="getTrialData()">Get Trials</button>
+                    <p>Found {{numTrials}} trials!</p>
+                </td>
+            </tr>
+        <td>
+        </td>
+        </table>
+    </form>
+</div>
+
+

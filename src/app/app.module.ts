@@ -9,11 +9,15 @@ import { FiltersComponent } from './components/home/filters/filters.component';
 import { TableComponent } from './components/home/table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatTableModule} from '@angular/material/table';
-import {MatToolbarModule} from '@angular/material/toolbar';
+
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatToolbarModule,
     MatInputModule,
     FormsModule,
-    MatDatepickerModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
