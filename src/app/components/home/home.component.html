@@ -1,4 +1,9 @@
-<h1 class="main-title">ClinicalTrials.gov Trial Explorer</h1>
+<mat-toolbar class="main-title">
+    <mat-toolbar-row>
+      <span>ClinicalTrials.gov Trial Explorer</span>
+      <span class="example-spacer"></span>
+    </mat-toolbar-row>
+</mat-toolbar>
 <app-filters></app-filters>
 <div class="container-main-table">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 trials-table">

@@ -9,6 +9,7 @@ import { FiltersComponent } from './components/home/filters/filters.component';
 import { TableComponent } from './components/home/table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MatTableModule} from '@angular/material/table';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
