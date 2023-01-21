@@ -2,7 +2,7 @@
     <form class="example-form">
         <table class="conatiner-table" cellspacing="0">
             <tr>
-                 <!-- CONDITION CONTAINER -->
+                <!-- CONDITION CONTAINER -->
                 <td>
                     <mat-form-field class="example-full-width">
                         <mat-label>Condition</mat-label>
@@ -14,23 +14,21 @@
                 <td>
                     <mat-form-field appearance="fill">
                         <mat-label>Status</mat-label>
-                        <mat-select [disabled]="disableSelect.value">
-                          <mat-option value="Recruiting">Recruiting</mat-option>
-                          <mat-option value="Active">Active</mat-option>
-                          <mat-option value="Completed">Completed</mat-option>
-                          <mat-option value="Unknown">Unknown</mat-option>
+                        <mat-select [(ngModel)]="selectedStatus" name="status">
+                            <mat-option *ngFor="let status of status" [value]="status.value">
+                                {{status.value}}
+                              </mat-option>
                         </mat-select>
                     </mat-form-field>
                 </td>
-
 
                 <!-- DATEPICKER CONTAINER -->
                 <td>
                     <mat-form-field appearance="fill">
                         <mat-label>Enter a date range</mat-label>
                         <mat-date-range-input [formGroup]="dateRange" [rangePicker]="picker">
-                          <input matStartDate formControlName="start" placeholder="Start date">
-                          <input matEndDate formControlName="end" placeholder="End date">
+                          <input [(ngModel)]="primaryCompletionDateFrom" matStartDate formControlName="start" placeholder="Start date">
+                          <input [(ngModel)]="primaryCompletionDateUntil" matEndDate formControlName="end" placeholder="End date">
                         </mat-date-range-input>
                         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-date-range-picker #picker></mat-date-range-picker>
